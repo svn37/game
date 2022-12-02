@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -e
+
+wasm-pack build --release --target web --out-name wasm --out-dir ./static/wasm
+python3 -m http.server 8080 --directory static
+# miniserve ./static/ --index index.html
